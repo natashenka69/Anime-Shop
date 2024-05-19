@@ -34,14 +34,14 @@ const Navbar = () => {
         {/* Logo + backbutton */}
         <div className="flex text-white items-center">
           <Link to="/">
-            <div className="text-white xl:text-3xl md:text-2xl text-lg mr-8 font-semibold">
+            <div className="text-white xl:text-3xl md:text-2xl text-lg mr-2 font-semibold">
               Rudyanya Shop
             </div>
           </Link>
         </div>
         <SearchBar />
         {/* Other side of navbar */}
-        <div className="flex text-white mr-12 items-center md:space-x-4">
+        <div className="flex text-white md:mr-12 mr-4 items-center md:space-x-4">
           <GoPerson
             className="flex md:text-3xl text-2xl cursor-pointer hover:text-purple-500 duration-300 mr-2"
           />
