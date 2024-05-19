@@ -1,9 +1,5 @@
 import Navbar from "./components/Navbar"
-import Test from "./components/Test"
-import Slider from "./components/Slider";
-import Hero from "./components/Hero.jsx"
 import ScrollToTop from "./components/ScrollToTop";
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux"
 import store from "./redux/store";

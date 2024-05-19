@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { Figures } from "../data";
 
@@ -21,29 +21,30 @@ import { useLocation } from "react-router-dom";
 export default function FigureItem() {
   const { id } = useParams();
   const figures = Figures.find((figures) => String(figures.id) === id);
-  const dispatch = useDispatch()
-  const [popUp, setPopUp] = useState(false)
+  const dispatch = useDispatch();
+  const [popUp, setPopUp] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
-    setPopUp(false)
-  }, [location])
+    setPopUp(false);
+  }, [location]);
 
   return (
     <div className="mt-[74px]">
       <div className="">
-        {popUp ? 
-      <PopUp onClose={() => setPopUp(false)} /> 
-      :
-      <div className="hidden"></div> 
-      }
+        {popUp ? (
+          <PopUp onClose={() => setPopUp(false)} />
+        ) : (
+          <div className="hidden"></div>
+        )}
         <div className="w-full bg-gradient-to-r from-[#041311]  to-[#093893]">
           <div className="pt-4 flex items-center h-full mx-4">
             <div className="flex flex-col xl:flex-row justify-between xl:w-2/3 w-full items-center xl:items-end mb-8">
-            <div className="w-[400px] h-[400px] items-center justify-center xl:hidden">
+              <div className="w-[400px] h-[400px] items-center justify-center xl:hidden">
                 <img
                   src={figures.image}
                   className="w-[400px] object-contain h-full"
+                  alt="Figure photo"
                 />
               </div>
               <div className="flex flex-col items-start text-white mb-2 ml-16">
@@ -61,8 +62,16 @@ export default function FigureItem() {
                   )}
                 </div>
                 <div className="space-y-2">
-                  <p className="text-orange-500 text-[40px]">${figures.price}</p>
-                  <button onClick={() => {dispatch(addToCart(figures)); setPopUp(true)}} className="py-4 px-8 text-white font-bold bg-orange-500 flex flex-row items-center hover:bg-purple-500 duration-300 rounded-xl">
+                  <p className="text-orange-500 text-[40px]">
+                    ${figures.price}
+                  </p>
+                  <button
+                    onClick={() => {
+                      dispatch(addToCart(figures));
+                      setPopUp(true);
+                    }}
+                    className="py-4 px-8 text-white font-bold bg-orange-500 flex flex-row items-center hover:bg-purple-500 duration-300 rounded-xl"
+                  >
                     <LuShoppingCart size={20} className="mr-2" />
                     <p className="text-lg">Add To Card</p>
                   </button>
@@ -72,6 +81,7 @@ export default function FigureItem() {
                 <img
                   src={figures.image}
                   className="w-[600px] object-contain h-full hover:opacity-90"
+                  alt="Figure photo"
                 />
               </div>
             </div>
@@ -106,6 +116,7 @@ export default function FigureItem() {
               <img
                 src={figures.bottomimage}
                 className="md:w-[600px] md:h-[400px] w-[400px] h-[300px] xl:w-[800px] xl:h-[400px] object-cover ml-8 rounded-md mt-4 xl:mt-0"
+                alt="Figure photo"
               />
             </div>
           </div>
@@ -125,15 +136,15 @@ export default function FigureItem() {
               spaceBetween={0}
               pagination={true}
               breakpoints={{
-                '@0.00': {
+                "@0.00": {
                   slidesPerView: 1,
                   spaceBetween: 30,
                 },
-                '@1.3': {
+                "@1.3": {
                   slidesPerView: 2,
                   spaceBetween: 20,
                 },
-                '@2.00': {
+                "@2.00": {
                   slidesPerView: 3,
                   spaceBetween: 40,
                 },
@@ -146,6 +157,7 @@ export default function FigureItem() {
                       <img
                         src={figure}
                         className="h-[700px] w-[520px] object-cover border-t-2 pt-4 border-white"
+                        alt="Figures photos"
                       />
                     </div>
                   </div>
