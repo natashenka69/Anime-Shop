@@ -33,7 +33,7 @@ export default function SearchBar() {
 
   return (
     <div>
-      <div class="relative xl:w-[800px] md:w-[400px] w-[200px] h-10 text-white md:mr-16 mr-4">
+      <div class="relative xl:w-[800px] md:w-[400px] w-[190px] h-10 text-white md:mr-16 mr-4">
         <div class="absolute grid w-5 h-5 place-items-center text-blue-gray-500 top-2/4 right-3 -translate-y-2/4">
           <CiSearch
             size={24}
