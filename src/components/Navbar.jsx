@@ -30,11 +30,11 @@ const Navbar = () => {
           : "w-full bg-black fixed flex items-center h-[75px] z-10 border-b-white border-b top-0 duration-200"
       }
     >
-      <div className="flex flex-row items-center w-full md:justify-between justify-center">
+      <div className="flex flex-row md:ml-4 ml-2 items-center w-full justify-between ">
         {/* Logo + backbutton */}
-        <div className="flex text-white ml-6 items-center">
+        <div className="flex text-white items-center">
           <Link to="/">
-            <div className="text-white xl:text-3xl text-2xl mr-8 font-semibold">
+            <div className="text-white xl:text-3xl md:text-2xl text-lg mr-8 font-semibold">
               Rudyanya Shop
             </div>
           </Link>
@@ -43,12 +43,11 @@ const Navbar = () => {
         {/* Other side of navbar */}
         <div className="flex text-white mr-12 items-center md:space-x-4">
           <GoPerson
-            size={30}
-            className="flex cursor-pointer hover:text-purple-500 duration-300 mr-2"
+            className="flex md:text-3xl text-2xl cursor-pointer hover:text-purple-500 duration-300 mr-2"
           />
           <Link to="/checkout">
             <div className="relative cursor-pointer hover:text-purple-500 duration-300">
-              <CiShoppingCart size={30} className="" />
+              <CiShoppingCart className="md:text-3xl text-2xl" />
               <p className="absolute top-[-5px] right-[-7px]">
                 {cartItem.length}
               </p>

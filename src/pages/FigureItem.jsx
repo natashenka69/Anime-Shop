@@ -40,10 +40,10 @@ export default function FigureItem() {
         <div className="w-full bg-gradient-to-r from-[#041311]  to-[#093893]">
           <div className="pt-4 flex items-center h-full mx-4">
             <div className="flex flex-col xl:flex-row justify-between xl:w-2/3 w-full items-center xl:items-end mb-8">
-              <div className="w-[400px] h-[400px] items-center justify-center xl:hidden">
+              <div className="h-[400px] items-center justify-center xl:hidden">
                 <img
                   src={figures.image}
-                  className="w-[400px] object-contain h-full"
+                  className="w-[300px] md:w-[400px] object-contain h-full"
                   alt="Figure photo"
                 />
               </div>
@@ -115,7 +115,7 @@ export default function FigureItem() {
             <div>
               <img
                 src={figures.bottomimage}
-                className="md:w-[600px] md:h-[400px] w-[400px] h-[300px] xl:w-[800px] xl:h-[400px] object-cover ml-8 rounded-md mt-4 xl:mt-0"
+                className="md:w-[600px] md:h-[400px] w-[350px] h-[300px] xl:w-[800px] xl:h-[400px] object-cover xl:ml-8 rounded-md mt-4 xl:mt-0"
                 alt="Figure photo"
               />
             </div>
