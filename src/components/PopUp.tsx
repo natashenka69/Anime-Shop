@@ -5,9 +5,12 @@ import { Figures } from "../data";
 
 import { IoCheckmarkDoneCircleOutline, IoClose } from "react-icons/io5";
 
-export default function PopUp({ onClose }) {
+import { PopUpFunctions, FigureData } from "../types/types";
+
+
+export default function PopUp({ onClose }: PopUpFunctions) {
   const { id } = useParams();
-  const figures = Figures.find((figures) => String(figures.id) === id);
+  const figures: FigureData = Figures.find((figures) => String(figures.id) === id);
 
   return (
     <div className="md:w-[400px] md:h-[270px] w-[350px] h-[240px] fixed z-10 right-8 mt-4 bg-black text-white">

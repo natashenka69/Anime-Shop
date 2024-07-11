@@ -6,7 +6,7 @@ import { LuShoppingCart } from "react-icons/lu";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { Navigation, Autoplay, Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -17,10 +17,11 @@ import PopUp from "../components/PopUp";
 import { useEffect } from "react";
 
 import { useLocation } from "react-router-dom";
+import { FigureData } from "../types/types";
 
 export default function FigureItem() {
   const { id } = useParams();
-  const figures = Figures.find((figures) => String(figures.id) === id);
+  const figures: FigureData | undefined = Figures.find((figures) => String(figures.id) === id);
   const dispatch = useDispatch();
   const [popUp, setPopUp] = useState(false);
   const location = useLocation();

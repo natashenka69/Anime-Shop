@@ -1,6 +1,8 @@
 import React from 'react'
 
-export default function Card({title, image, price, category, company}) {
+import { CardComponents } from '../types/types'
+
+export default function Card({title, image, price, category, company}: CardComponents) {
   return (
     <div className='w-[170px] h-[305px] bg-white mt-12 cursor-pointer hover:opacity-90 duration-200'>
         <img src={image} className="w-[170px] h-[170px] object-cover object-top"/>

@@ -33,7 +33,7 @@ export default function Slider() {
         pagination={true}
         className="relative"
       >
-        {slides.map((item) => (
+        {slides.map((item: string) => (
           <SwiperSlide key={item}>
             <div className="flex group justify-center items-center">
               <img

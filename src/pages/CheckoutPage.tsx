@@ -3,10 +3,10 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { decrease, removeFromCart } from "../redux/slice/cartSlice";
 import { increase } from "../redux/slice/cartSlice";
+import { CartItems } from "../types/types";
 
 export default function CheckoutPage() {
-  const cartItems = useSelector((state) => state.cart.cart);
-  const { amount } = useSelector((state) => state.cart);
+  const cartItems = useSelector((state: any) => state.cart.cart);
   const dispatch = useDispatch();
   return (
     <div className="mt-[74px] font-bold">
@@ -21,7 +21,7 @@ export default function CheckoutPage() {
           </div>
           <hr className="max-w-[1200px] mb-4 mr-2" />
           <div className="">
-            {cartItems.map((item) => {
+            {cartItems.map((item: CartItems) => {
               return (
                 <div className="flex flex-col justify-center items-left ml-4 xl:mr-8 mr-2">
                   <div className="flex flex-row">
@@ -76,12 +76,12 @@ export default function CheckoutPage() {
               <div>
                 <p className="text-xl font-normal mb-4">
                   Subtotal (
-                  {cartItems.reduce((acc, item) => acc + item.amount, 0)} items)
+                  {cartItems.reduce((acc: number, item: {amount: number, price: number}) => acc + item.amount, 0)} items)
                 </p>
                 <p className="text-2xl font-medium">
                   $
                   {cartItems
-                    .reduce((acc, item) => acc + item.amount * item.price, 0)
+                    .reduce((acc: number, item: {amount: number, price: number}) => acc + item.amount * item.price, 0)
                     .toFixed(2)}
                 </p>
               </div>
