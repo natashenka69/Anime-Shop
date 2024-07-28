@@ -13,6 +13,7 @@ import "swiper/css/pagination";
 
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/slice/cartSlice";
+import { addToWatched } from "../redux/slice/watchedSlice";
 import PopUp from "../components/PopUp";
 import { useEffect } from "react";
 
@@ -21,12 +22,15 @@ import { FigureData } from "../types/types";
 
 export default function FigureItem() {
   const { id } = useParams();
-  const figures: FigureData | undefined = Figures.find((figures) => String(figures.id) === id);
+  const figures: FigureData = Figures.find((figures) => String(figures.id) === id);
   const dispatch = useDispatch();
   const [popUp, setPopUp] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
+    if (figures) {
+      dispatch(addToWatched(figures));
+    }
     setPopUp(false);
   }, [location]);
 

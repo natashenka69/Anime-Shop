@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { FigureData } from "../types/types";
 
 
-export default function Hero() {
+export default function Hero({addToWatched}: any) {
   const truncateString = (str: string, num: number) => {
     if (str?.length > num) {
       return str.slice(0, num) + "...";

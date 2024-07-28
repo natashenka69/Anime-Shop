@@ -26,7 +26,7 @@ export type CardComponents = {
     image: string,
     price: string,
     category: string,
-    company: string
+    company: string,
   }
 
 export type PopUpFunctions = {

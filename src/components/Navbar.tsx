@@ -44,9 +44,11 @@ const Navbar = () => {
         <SearchBar />
         {/* Other side of navbar */}
         <div className="flex text-white md:mr-12 mr-4 items-center md:space-x-4">
+        <Link to="/authorization">
           <GoPerson
             className="flex md:text-3xl text-2xl cursor-pointer hover:text-purple-500 duration-300 mr-2"
           />
+          </Link>
           <Link to="/checkout">
             <div className="relative cursor-pointer hover:text-purple-500 duration-300">
               <CiShoppingCart className="md:text-3xl text-2xl" />
